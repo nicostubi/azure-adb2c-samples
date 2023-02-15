@@ -16,22 +16,22 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: 'B2C_1_susi_v2',
-        resetPassword: 'B2C_1_reset_v3',
-        editProfile: 'B2C_1_edit_profile_v2',
+        signUpSignIn: 'B2C_1_susi',
+        resetPassword: 'B2C_1_reset_password',
+        editProfile: 'B2C_1_edit_profile',
     },
     authorities: {
         signUpSignIn: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi_v2',
+            authority: 'https://pickspma.b2clogin.com/pickspma.onmicrosoft.com/B2C_1_susi',
         },
         resetPassword: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_reset_v3',
+            authority: 'https://pickspma.b2clogin.com/pickspma.onmicrosoft.com/B2C_1_reset_password',
         },
         editProfile: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile_v2',
+            authority: 'https://pickspma.b2clogin.com/pickspma.onmicrosoft.com/b2c_1_edit_profile',
         },
     },
-    authorityDomain: 'fabrikamb2c.b2clogin.com',
+    authorityDomain: 'pickspma.b2clogin.com',
 };
 
 /**
@@ -41,7 +41,7 @@ export const b2cPolicies = {
  */
 export const msalConfig: Configuration = {
     auth: {
-        clientId: '9067c884-9fa6-414f-9aa4-a565b1cb46be', // This is the ONLY mandatory field that you need to supply.
+        clientId: '531ff0de-0174-4f80-8745-0606a415d76b', // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Defaults to "https://login.microsoftonline.com/common"
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: '/auth', // Points to window.location.origin by default. You must register this URI on Azure portal/App Registration.
@@ -74,8 +74,8 @@ export const msalConfig: Configuration = {
   apiTodoList: {
       endpoint: "https://localhost:44351/api/todolist",
       scopes: {
-          read: ["https://fabrikamb2c.onmicrosoft.com/TodoList/ToDoList.Read"],
-          write: ["https://fabrikamb2c.onmicrosoft.com/TodoList/ToDoList.ReadWrite"]
+          read: ["https://pickspma.onmicrosoft.com/9327c903-355e-4cc7-af1a-8f8a2679baa3/ToDoList.Read"],
+          write: ["https://pickspma.onmicrosoft.com/9327c903-355e-4cc7-af1a-8f8a2679baa3/ToDoList.ReadWrite"]
       }
   }
 }
